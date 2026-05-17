@@ -1,0 +1,200 @@
+message,intent,language
+Hi,GREETING,english
+Hello,GREETING,english
+Hey,GREETING,english
+Good morning,GREETING,english
+Good evening,GREETING,english
+Assalamualaikum,GREETING,english
+Salam,GREETING,english
+AOA,GREETING,english
+Aoa,GREETING,english
+Hi there,GREETING,english
+Hello?,GREETING,english
+Heyy,GREETING,english
+Good afternoon,GREETING,english
+"Hi, is anyone there?",GREETING,english
+"Hello, are you available?",GREETING,english
+Hii,GREETING,english
+Salaam,GREETING,english
+Hi I wanted to ask something,GREETING,english
+Hello team,GREETING,english
+"Hey there, quick question",GREETING,english
+Good morning! Hope you're well,GREETING,english
+"Hi, I came across your page",GREETING,english
+"Hello, I found your number on Instagram",GREETING,english
+"Salam, mujhe kuch poochna tha",GREETING,roman_urdu
+"Hi, someone recommended you to me",GREETING,english
+"Hey, got your number from a friend",GREETING,english
+I want to book an appointment,BOOKING_REQUEST,english
+Can I schedule a session?,BOOKING_REQUEST,english
+I'd like to make a reservation for tomorrow,BOOKING_REQUEST,english
+Book karna hai,BOOKING_REQUEST,roman_urdu
+Appointment leni hai,BOOKING_REQUEST,roman_urdu
+Can you book me in for Friday?,BOOKING_REQUEST,english
+I want to reserve a table for 4,BOOKING_REQUEST,english
+Mujhe appointment chahiye,BOOKING_REQUEST,roman_urdu
+How do I book with you?,BOOKING_REQUEST,english
+Is there a slot available this week?,BOOKING_REQUEST,english
+Can I get an appointment for Saturday morning?,BOOKING_REQUEST,english
+I need to schedule a consultation,BOOKING_REQUEST,english
+Appointment kab mil sakti hai?,BOOKING_REQUEST,roman_urdu
+Please book me for next Monday,BOOKING_REQUEST,english
+Can you fit me in today?,BOOKING_REQUEST,english
+"I want to come in, how do I book?",BOOKING_REQUEST,english
+Reserve kar do please,BOOKING_REQUEST,english
+Can we set up a meeting?,BOOKING_REQUEST,english
+I'd like to come in this week,BOOKING_REQUEST,english
+Slot available hai koi?,BOOKING_REQUEST,roman_urdu
+Do you have any openings tomorrow?,BOOKING_REQUEST,english
+I need an urgent appointment,BOOKING_REQUEST,english
+Can I book for 2 people?,BOOKING_REQUEST,english
+Booking karni hai aaj ke liye,BOOKING_REQUEST,roman_urdu
+When's your next available slot?,BOOKING_REQUEST,english
+Can I get a same-day appointment?,BOOKING_REQUEST,english
+"I want to visit, need a booking",BOOKING_REQUEST,english
+How much does it cost?,PRICE_INQUIRY,english
+What's your price?,PRICE_INQUIRY,english
+Kitna charge karte ho?,PRICE_INQUIRY,english
+Price list send kar do,PRICE_INQUIRY,english
+Can you share your rates?,PRICE_INQUIRY,english
+What are your fees?,PRICE_INQUIRY,english
+How much for a session?,PRICE_INQUIRY,english
+Rate kya hai?,PRICE_INQUIRY,roman_urdu
+Is it expensive?,PRICE_INQUIRY,english
+What's the starting price?,PRICE_INQUIRY,english
+Charges batao,PRICE_INQUIRY,english
+Do you have any packages?,PRICE_INQUIRY,english
+What are your packages and prices?,PRICE_INQUIRY,english
+How much for the basic service?,PRICE_INQUIRY,english
+Kitna hoga total?,PRICE_INQUIRY,roman_urdu
+Can you give me a quote?,PRICE_INQUIRY,english
+What's the cost for 2 people?,PRICE_INQUIRY,english
+Do you charge per hour or per session?,PRICE_INQUIRY,english
+Pricing kya hai?,PRICE_INQUIRY,roman_urdu
+What's included in the price?,PRICE_INQUIRY,english
+Any discounts available?,PRICE_INQUIRY,english
+Student discount milta hai?,PRICE_INQUIRY,roman_urdu
+Is there a monthly plan?,PRICE_INQUIRY,english
+How much for a full month?,PRICE_INQUIRY,english
+Bulk discount hai koi?,PRICE_INQUIRY,roman_urdu
+What's the difference between your packages?,PRICE_INQUIRY,english
+Price range kya hai?,PRICE_INQUIRY,roman_urdu
+What services do you offer?,SERVICE_INQUIRY,english
+What do you do exactly?,SERVICE_INQUIRY,english
+Kya kya services hain aapki?,SERVICE_INQUIRY,roman_urdu
+Do you offer home delivery?,SERVICE_INQUIRY,english
+Can you tell me about your services?,SERVICE_INQUIRY,english
+What's included?,SERVICE_INQUIRY,english
+Do you do X?,SERVICE_INQUIRY,english
+Is this something you can help with?,SERVICE_INQUIRY,english
+What treatments are available?,SERVICE_INQUIRY,english
+Aap kya kya karte ho?,SERVICE_INQUIRY,roman_urdu
+Do you specialize in anything?,SERVICE_INQUIRY,english
+Tell me about your offerings,SERVICE_INQUIRY,english
+What kind of work do you do?,SERVICE_INQUIRY,english
+Services ki list send karo,SERVICE_INQUIRY,roman_urdu
+Do you handle corporate clients?,SERVICE_INQUIRY,english
+Can you do custom orders?,SERVICE_INQUIRY,english
+Do you work on weekends?,SERVICE_INQUIRY,english
+What's your main specialty?,SERVICE_INQUIRY,english
+Koi new services launch ki hain?,SERVICE_INQUIRY,roman_urdu
+Do you have a menu/catalogue?,SERVICE_INQUIRY,english
+Can I see your portfolio?,SERVICE_INQUIRY,english
+What's your most popular service?,SERVICE_INQUIRY,english
+Do you provide after-sales support?,SERVICE_INQUIRY,english
+Guarantee milti hai?,SERVICE_INQUIRY,roman_urdu
+Do you offer consultations?,SERVICE_INQUIRY,english
+Home service available hai?,SERVICE_INQUIRY,roman_urdu
+Are you open right now?,AVAILABILITY_CHECK,english
+What are your hours?,AVAILABILITY_CHECK,english
+Aap kab available ho?,AVAILABILITY_CHECK,roman_urdu
+Are you open on Sundays?,AVAILABILITY_CHECK,english
+What time do you close?,AVAILABILITY_CHECK,english
+Kal open ho?,AVAILABILITY_CHECK,roman_urdu
+Do you work on public holidays?,AVAILABILITY_CHECK,english
+Opening time kya hai?,AVAILABILITY_CHECK,roman_urdu
+Are you open today?,AVAILABILITY_CHECK,english
+Do you have evening slots?,AVAILABILITY_CHECK,english
+Any slots available this weekend?,AVAILABILITY_CHECK,english
+Kya aap abhi available hain?,AVAILABILITY_CHECK,roman_urdu
+Do you have a slot at 3pm?,AVAILABILITY_CHECK,english
+When do you open?,AVAILABILITY_CHECK,english
+Are you closed on Fridays?,AVAILABILITY_CHECK,english
+Working hours batao,AVAILABILITY_CHECK,roman_urdu
+Do you work after 6pm?,AVAILABILITY_CHECK,english
+Can I come at 9am?,AVAILABILITY_CHECK,english
+Is Saturday a working day for you?,AVAILABILITY_CHECK,english
+Aaj available ho kya?,AVAILABILITY_CHECK,roman_urdu
+I'm very disappointed with the service,COMPLAINT,english
+This is not what I ordered,COMPLAINT,english
+The quality was terrible,COMPLAINT,english
+I want a refund,COMPLAINT,english
+Bahut buri service thi,COMPLAINT,english
+My order is wrong,COMPLAINT,english
+You charged me twice,COMPLAINT,english
+This is unacceptable,COMPLAINT,english
+I've been waiting for 2 hours,COMPLAINT,english
+Nobody called me back,COMPLAINT,english
+The product is damaged,COMPLAINT,english
+This is not working properly,COMPLAINT,english
+I was told something different,COMPLAINT,english
+Your staff was rude to me,COMPLAINT,english
+I want to complain,COMPLAINT,english
+I need this resolved immediately,COMPLAINT,english
+Yeh kaam nahi kar raha,COMPLAINT,roman_urdu
+Mujhe bohot bura laga,COMPLAINT,roman_urdu
+You wasted my time,COMPLAINT,english
+This is the third time this happened,COMPLAINT,english
+I'm extremely unhappy,COMPLAINT,english
+Please fix this issue,COMPLAINT,english
+Mera paisa wapas karo,COMPLAINT,roman_urdu
+I will leave a bad review,COMPLAINT,english
+This is fraud,COMPLAINT,english
+Why did no one respond earlier?,COMPLAINT,english
+Where is my order?,ORDER_STATUS,english
+When will my order arrive?,ORDER_STATUS,english
+Order status check karna hai,ORDER_STATUS,roman_urdu
+Has my order been dispatched?,ORDER_STATUS,english
+My tracking number isn't working,ORDER_STATUS,english
+When will you deliver?,ORDER_STATUS,english
+Order kab tak ayega?,ORDER_STATUS,english
+"I ordered 3 days ago, no update",ORDER_STATUS,english
+Can you check my order status?,ORDER_STATUS,english
+Is my order confirmed?,ORDER_STATUS,english
+Order confirm hua ya nahi?,ORDER_STATUS,roman_urdu
+Delivery kab hogi?,ORDER_STATUS,english
+I haven't received my order,ORDER_STATUS,english
+My order is late,ORDER_STATUS,english
+Can you track my package?,ORDER_STATUS,english
+Mera order kahan hai?,ORDER_STATUS,roman_urdu
+Still waiting for my delivery,ORDER_STATUS,english
+Order number X ka status batao,ORDER_STATUS,english
+Did you get my order?,ORDER_STATUS,english
+When was my order shipped?,ORDER_STATUS,english
+I want to speak to a manager,ESCALATION_NEEDED,english
+Can I talk to a human please?,ESCALATION_NEEDED,english
+This AI is not helpful,ESCALATION_NEEDED,english
+Transfer me to a real person,ESCALATION_NEEDED,english
+I need to speak to someone directly,ESCALATION_NEEDED,english
+Kisi insaan se baat karni hai,ESCALATION_NEEDED,roman_urdu
+Please connect me to your team,ESCALATION_NEEDED,english
+I need urgent help,ESCALATION_NEEDED,english
+This is an emergency,ESCALATION_NEEDED,english
+Can I get a callback?,ESCALATION_NEEDED,english
+I need to escalate this,ESCALATION_NEEDED,english
+Is there a direct number I can call?,ESCALATION_NEEDED,english
+Please have someone call me,ESCALATION_NEEDED,english
+Urgent matter hai,ESCALATION_NEEDED,roman_urdu
+Human agent chahiye,ESCALATION_NEEDED,roman_urdu
+I'd rather speak on a call,ESCALATION_NEEDED,english
+Can your owner contact me?,ESCALATION_NEEDED,english
+"I need a real person, not a bot",ESCALATION_NEEDED,english
+This can't be resolved through chat,ESCALATION_NEEDED,english
+Mujhe call karni hai,ESCALATION_NEEDED,roman_urdu
+Where are you located?,LOCATION_INQUIRY,english
+What's your address?,LOCATION_INQUIRY,english
+Aap kahan ho?,LOCATION_INQUIRY,roman_urdu
+How do I find you?,LOCATION_INQUIRY,english
+Are you in Lahore?,LOCATION_INQUIRY,english
+Do you have a physical location?,LOCATION_INQUIRY,english
+Send me your location,LOCATION_INQUIRY,english

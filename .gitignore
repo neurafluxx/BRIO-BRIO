@@ -1,0 +1,11 @@
+.env
+conversation_history.json
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.env.local
+.env.*.local
+.DS_Store
