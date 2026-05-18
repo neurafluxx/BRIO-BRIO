@@ -1,0 +1,411 @@
+{
+  "version": "1.0",
+  "description": "BRIO multi-turn WhatsApp conversation test cases. Each test has: scenario, business_id, exchanges (role: customer/brio, message, expected_intent, notes), and pass_criteria.",
+  "how_to_use": "Feed each conversation sequentially through the BRIO agent. Compare BRIO's output to expected_response_type and pass_criteria.",
+  "test_cases": [
+    {
+      "test_id": "TC-001",
+      "scenario": "Simple service inquiry → resolved",
+      "business_id": "demo_001",
+      "business_type": "restaurant",
+      "complexity": "basic",
+      "exchanges": [
+        {
+          "role": "customer",
+          "message": "Hi",
+          "expected_intent": "GREETING"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "warm_greeting_with_menu_offer",
+          "notes": "Should greet warmly, introduce as Lahori Flames assistant, offer to help"
+        },
+        {
+          "role": "customer",
+          "message": "Do you do home delivery?",
+          "expected_intent": "SERVICE_INQUIRY"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "service_confirmation_with_details",
+          "notes": "Confirm delivery, mention radius (7km), minimum order (PKR 800), time (30-45 min)"
+        },
+        {
+          "role": "customer",
+          "message": "What's the minimum order?",
+          "expected_intent": "SERVICE_INQUIRY"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "specific_detail_answer",
+          "notes": "PKR 800 minimum. Should be pulled from knowledge base accurately."
+        },
+        {
+          "role": "customer",
+          "message": "Ok thanks",
+          "expected_intent": "GENERAL_INQUIRY"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "polite_close_with_cta",
+          "notes": "Thank them, invite to order anytime, share ordering method"
+        }
+      ],
+      "pass_criteria": [
+        "Correct delivery radius stated",
+        "Correct minimum order amount",
+        "No hallucinated information",
+        "Response time under 3 seconds per message"
+      ]
+    },
+    {
+      "test_id": "TC-002",
+      "scenario": "Pricing inquiry → booking conversion",
+      "business_id": "demo_003",
+      "business_type": "medical_clinic",
+      "complexity": "medium",
+      "exchanges": [
+        {
+          "role": "customer",
+          "message": "Aoa, laser hair removal ka price kya hai?",
+          "expected_intent": "PRICE_INQUIRY"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "price_range_with_consultation_cta",
+          "notes": "Share range (5,000-15,000), explain it depends on area, recommend consultation for exact quote"
+        },
+        {
+          "role": "customer",
+          "message": "Which areas do you cover?",
+          "expected_intent": "SERVICE_INQUIRY"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "area_list_with_pricing",
+          "notes": "List common areas (upper lip, legs, underarms, etc.) with rough pricing tiers"
+        },
+        {
+          "role": "customer",
+          "message": "How many sessions will I need?",
+          "expected_intent": "SERVICE_INQUIRY"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "honest_non_diagnosis",
+          "notes": "CRITICAL: Must NOT give specific number. Say Dr. Nadia will advise based on assessment."
+        },
+        {
+          "role": "customer",
+          "message": "Ok I want to book a consultation",
+          "expected_intent": "BOOKING_REQUEST"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "booking_link_with_details",
+          "notes": "Share Cal.com link, mention consultation fee (PKR 2,000), give available days"
+        },
+        {
+          "role": "customer",
+          "message": "Done, I booked for Saturday at 11am",
+          "expected_intent": "FOLLOW_UP"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "booking_confirmation_with_reminders",
+          "notes": "Confirm booking, share address, mention to arrive 5 min early"
+        }
+      ],
+      "pass_criteria": [
+        "No medical diagnosis made",
+        "Correct consultation price stated",
+        "Booking link shared",
+        "Follow-up confirmation sent",
+        "Conversation feels human"
+      ]
+    },
+    {
+      "test_id": "TC-003",
+      "scenario": "Complaint → escalation",
+      "business_id": "demo_004",
+      "business_type": "ecommerce",
+      "complexity": "medium",
+      "exchanges": [
+        {
+          "role": "customer",
+          "message": "Hello I received a damaged item",
+          "expected_intent": "COMPLAINT"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "empathetic_apology_with_resolution_request",
+          "notes": "Apologize sincerely. Ask for order number and photo of damage. Don't be defensive."
+        },
+        {
+          "role": "customer",
+          "message": "Order number is UT-4521",
+          "expected_intent": "ORDER_STATUS"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "acknowledgement_and_next_step",
+          "notes": "Acknowledge order number. Ask for photo of damaged item."
+        },
+        {
+          "role": "customer",
+          "message": "Here is the photo [photo]",
+          "expected_intent": "COMPLAINT"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "resolution_offer",
+          "notes": "Offer replacement or refund. State timeline. Apologize again."
+        },
+        {
+          "role": "customer",
+          "message": "This is taking too long, I want to speak to a manager",
+          "expected_intent": "ESCALATION_NEEDED"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "human_escalation_with_eta",
+          "notes": "Acknowledge escalation request. Say a team member will contact within X hours. Do NOT argue."
+        }
+      ],
+      "pass_criteria": [
+        "No defensive language",
+        "Escalation triggered correctly",
+        "Email notification sent to business owner",
+        "Conversation tone remains empathetic throughout"
+      ]
+    },
+    {
+      "test_id": "TC-004",
+      "scenario": "Memory test — customer references earlier conversation",
+      "business_id": "demo_001",
+      "business_type": "restaurant",
+      "complexity": "advanced",
+      "exchanges": [
+        {
+          "role": "customer",
+          "message": "Hi I want to order the family deal",
+          "expected_intent": "BOOKING_REQUEST"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "confirm_family_deal_details",
+          "notes": "Confirm Family Deal composition and price (PKR 3,500). Ask for delivery or dine-in."
+        },
+        {
+          "role": "customer",
+          "message": "Delivery please. I'm in DHA Phase 5.",
+          "expected_intent": "SERVICE_INQUIRY"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "delivery_feasibility_check",
+          "notes": "Check if DHA Phase 5 is within 7km radius. Confirm delivery charge. Ask for full address."
+        },
+        {
+          "role": "customer",
+          "message": "Also add 2 extra naans",
+          "expected_intent": "GENERAL_INQUIRY"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "order_updated_with_new_total",
+          "notes": "MEMORY TEST: Must remember Family Deal + add 2 naans (PKR 80 extra). State new total."
+        },
+        {
+          "role": "customer",
+          "message": "What was the total again?",
+          "expected_intent": "PRICE_INQUIRY"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "accurate_total_from_memory",
+          "notes": "MEMORY TEST: Must recall: Family Deal PKR 3,500 + 2 Naan PKR 80 + delivery. State correctly."
+        }
+      ],
+      "pass_criteria": [
+        "Total calculated correctly",
+        "Previous items remembered without re-asking",
+        "No context loss between messages",
+        "Delivery charge included in total"
+      ]
+    },
+    {
+      "test_id": "TC-005",
+      "scenario": "Out-of-hours message handling",
+      "business_id": "demo_003",
+      "business_type": "medical_clinic",
+      "complexity": "basic",
+      "exchanges": [
+        {
+          "role": "customer",
+          "message": "Hi I need an urgent appointment today",
+          "expected_intent": "BOOKING_REQUEST",
+          "time_context": "Sunday 8pm — clinic is closed"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "hours_info_with_next_available",
+          "notes": "Inform clinic is closed on Sunday. Next available: Monday 10am. Offer to book Monday slot now."
+        },
+        {
+          "role": "customer",
+          "message": "It's quite urgent though",
+          "expected_intent": "ESCALATION_NEEDED"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "empathetic_urgent_response",
+          "notes": "Acknowledge urgency. Offer earliest Monday slot. If medical emergency, recommend ER."
+        },
+        {
+          "role": "customer",
+          "message": "Ok book me for Monday 10am",
+          "expected_intent": "BOOKING_REQUEST"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "booking_confirmed_out_of_hours",
+          "notes": "Book Monday 10am via Cal.com. Confirm. Tell them a reminder will be sent."
+        }
+      ],
+      "pass_criteria": [
+        "Correct hours stated",
+        "Earliest slot offered proactively",
+        "ER mention for medical emergency",
+        "Booking completed successfully even outside hours"
+      ]
+    },
+    {
+      "test_id": "TC-006",
+      "scenario": "Real estate lead qualification",
+      "business_id": "demo_002",
+      "business_type": "real_estate",
+      "complexity": "advanced",
+      "exchanges": [
+        {
+          "role": "customer",
+          "message": "Hi I'm looking for a house to buy",
+          "expected_intent": "SERVICE_INQUIRY"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "lead_qualification_questions",
+          "notes": "Greet. Ask: budget range, preferred area, size requirement, timeline. Qualify the lead."
+        },
+        {
+          "role": "customer",
+          "message": "Budget is around 2.5-3 crore, DHA preferred, 5 marla",
+          "expected_intent": "SERVICE_INQUIRY"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "matching_listings_summary",
+          "notes": "Match to sample listing: 5 Marla DHA Phase 6 at PKR 2.8 Crore. Share brief details."
+        },
+        {
+          "role": "customer",
+          "message": "Looks interesting. Can I view it?",
+          "expected_intent": "BOOKING_REQUEST"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "viewing_schedule_offer",
+          "notes": "Offer to schedule a viewing. Mention it's free. Share available times or booking link."
+        },
+        {
+          "role": "customer",
+          "message": "What documents will I need if I decide to buy?",
+          "expected_intent": "GENERAL_INQUIRY"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "document_list_from_kb",
+          "notes": "Provide document list from FAQ: CNIC, photos, funds. Mention agent guides through process."
+        }
+      ],
+      "pass_criteria": [
+        "Lead qualification questions asked",
+        "Correct listing matched to budget",
+        "Free viewing mentioned",
+        "Documents pulled accurately from knowledge base"
+      ]
+    },
+    {
+      "test_id": "TC-007",
+      "scenario": "Coaching discovery call booking",
+      "business_id": "demo_005",
+      "business_type": "coaching",
+      "complexity": "medium",
+      "exchanges": [
+        {
+          "role": "customer",
+          "message": "I saw your ad. What exactly do you do?",
+          "expected_intent": "SERVICE_INQUIRY"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "inspiring_service_overview",
+          "notes": "Give engaging overview of Apex coaching. Mention Bilal's background briefly. Offer free call."
+        },
+        {
+          "role": "customer",
+          "message": "How is this different from just reading a business book?",
+          "expected_intent": "GENERAL_INQUIRY"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "value_differentiation_answer",
+          "notes": "Use FAQ answer: coach develops your ability + accountability + personalized. Don't be defensive."
+        },
+        {
+          "role": "customer",
+          "message": "What's the price?",
+          "expected_intent": "PRICE_INQUIRY"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "price_with_free_call_anchor",
+          "notes": "Share pricing. Lead with FREE discovery call first. Makes paid tiers feel lower risk."
+        },
+        {
+          "role": "customer",
+          "message": "Ok I'll try the free call",
+          "expected_intent": "BOOKING_REQUEST"
+        },
+        {
+          "role": "brio",
+          "expected_response_type": "booking_link_with_excitement",
+          "notes": "Share Cal.com link. Confirm it's 30 min, no commitment. Set expectations for the call."
+        }
+      ],
+      "pass_criteria": [
+        "Free call pitched before paid tiers",
+        "Coach background mentioned",
+        "Price stated accurately",
+        "Booking completed"
+      ]
+    },
+    {
+      "test_id": "TC-008",
+      "scenario": "Quick reply button interaction",
+      "business_id": "demo_001",
+      "business_type": "restaurant",
+      "complexity": "basic",
+      "exchanges": [
+        {
+          "role": "customer",
+          "message": "Hi",
+          "expected_intent": "GREETING"
+        }
+      ],
+      "pass_criteria": [
+        "Quick reply payloads handled correctly"
+      ]
+    }
+  ]
+}
