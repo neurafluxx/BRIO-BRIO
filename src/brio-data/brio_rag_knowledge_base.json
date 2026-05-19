@@ -1,0 +1,490 @@
+{
+	"version": "1.0",
+	"description": "BRIO RAG Knowledge Base — sample data for 5 SMB types. Each business has services, pricing, FAQs, hours, policies, and location. Use for chunking and embedding into Supabase pgvector.",
+	"chunking_recommendation": "Chunk by section (services, pricing, faq). Max 300 tokens per chunk. Overlap 50 tokens.",
+	"businesses": [
+		{
+			"business_id": "demo_001",
+			"type": "restaurant",
+			"name": "Lahori Flames Restaurant",
+			"tagline": "Authentic Lahori cuisine, delivered with love.",
+			"whatsapp_number": "+923001234567",
+			"ai_persona": "Friendly, warm, uses the word 'ji' occasionally. Refers to customers as 'aap'. Warm and welcoming tone.",
+			"language_preference": "bilingual (English and Urdu)",
+			"services": [
+				{
+					"name": "Dine-In",
+					"description": "Sit-down dining for up to 120 guests. Reservations recommended for weekends.",
+					"note": "Walk-ins welcome on weekdays"
+				},
+				{
+					"name": "Home Delivery",
+					"description": "We deliver within 7km radius. Minimum order PKR 800.",
+					"note": "Delivery time: 30-45 minutes"
+				},
+				{
+					"name": "Takeaway",
+					"description": "Order ahead and pick up. Ready in 15-20 minutes.",
+					"note": "10% discount on takeaway orders"
+				},
+				{
+					"name": "Corporate Catering",
+					"description": "Full catering for offices and events. Minimum 20 persons.",
+					"note": "Advance booking of 48 hours required"
+				},
+				{
+					"name": "Private Event Booking",
+					"description": "Reserve our private dining room for up to 30 guests.",
+					"note": "Available on request, contact for pricing"
+				}
+			],
+			"menu_highlights": [
+				{
+					"item": "Lahori Chargha",
+					"price": "PKR 1,200",
+					"description": "Full marinated chicken, slow-cooked and fried"
+				},
+				{
+					"item": "Mutton Karahi",
+					"price": "PKR 2,400 (full) / PKR 1,400 (half)",
+					"description": "Classic wok-cooked mutton in tomato base"
+				},
+				{
+					"item": "Beef Seekh Kebab Platter",
+					"price": "PKR 850 (6 pieces)",
+					"description": "Charcoal-grilled seekh kebabs with chutney"
+				},
+				{
+					"item": "Paye Saalan",
+					"price": "PKR 500 per portion",
+					"description": "Traditional breakfast dish, available until noon"
+				},
+				{
+					"item": "Naan (Plain)",
+					"price": "PKR 40",
+					"description": "Freshly baked tandoor naan"
+				},
+				{
+					"item": "Lassi (Sweet/Salted)",
+					"price": "PKR 180",
+					"description": "Traditional thick lassi"
+				},
+				{
+					"item": "Family Deal",
+					"price": "PKR 3,500",
+					"description": "Chargha + Mutton Karahi (half) + 4 naan + 2 Lassi"
+				}
+			],
+			"hours": {
+				"monday_to_thursday": "12:00 PM – 12:00 AM",
+				"friday_saturday": "12:00 PM – 1:00 AM",
+				"sunday": "11:00 AM – 12:00 AM",
+				"note": "Kitchen closes 30 minutes before closing time"
+			},
+			"location": {
+				"area": "Gulberg III, Lahore",
+				"landmark": "Near Pace Shopping Mall",
+				"address": "47-B, Main Boulevard Gulberg, Lahore",
+				"google_maps": "maps.google.com/lahoriflamesdemo"
+			},
+			"payment": [
+				"Cash",
+				"EasyPaisa",
+				"JazzCash",
+				"Bank transfer",
+				"Cards (Visa/Mastercard)"
+			],
+			"policies": {
+				"reservations": "Reservations held for 15 minutes after booking time.",
+				"cancellations": "Cancel at least 2 hours before for dine-in. Delivery orders cannot be cancelled once dispatched.",
+				"refunds": "Refund or replacement offered for incorrect orders. Contact within 30 minutes of delivery.",
+				"dress_code": "Smart casual. No restrictions."
+			},
+			"faqs": [
+				{
+					"q": "Do you have vegetarian options?",
+					"a": "Yes, we have several vegetarian dishes including Daal Makhani, Saag, and vegetable dishes. Ask us for the full veg menu."
+				},
+				{
+					"q": "Can I order a custom cake for a birthday?",
+					"a": "We don't make cakes, but we can arrange a special dessert platter for celebrations. Let us know 24 hours in advance."
+				},
+				{
+					"q": "Is there parking?",
+					"a": "Yes, we have a private parking area that fits up to 30 cars. Street parking is also available."
+				},
+				{
+					"q": "Do you accommodate large groups?",
+					"a": "Yes! Groups up to 50 can be accommodated with advance booking. Corporate events and family gatherings welcome."
+				},
+				{
+					"q": "Are you halal certified?",
+					"a": "Yes, all our meat is 100% halal certified."
+				},
+				{
+					"q": "What is the minimum delivery order?",
+					"a": "Minimum order for delivery is PKR 800. Delivery charge is PKR 80 within 5km, PKR 120 beyond 5km."
+				},
+				{
+					"q": "How can I track my delivery?",
+					"a": "Our delivery rider will share their contact number when the order is dispatched. You can call them directly."
+				}
+			],
+			"booking_link": "cal.com/lahoriflamesdemo",
+			"booking_note": "For table reservations, share this link. For corporate catering, ask for Sarmad directly."
+		},
+		{
+			"business_id": "demo_002",
+			"type": "real_estate",
+			"name": "PrimeSpaces Real Estate",
+			"tagline": "Find your perfect property with zero hassle.",
+			"ai_persona": "Professional, knowledgeable, honest. Never overpromises. Uses clear, jargon-free language.",
+			"services": [
+				{
+					"name": "Property Sales",
+					"description": "Residential and commercial properties for sale across Lahore, Karachi, and Islamabad."
+				},
+				{
+					"name": "Property Rentals",
+					"description": "Short and long-term rental listings. Both furnished and unfurnished."
+				},
+				{
+					"name": "Property Management",
+					"description": "We manage your property on your behalf — rent collection, tenant screening, maintenance coordination."
+				},
+				{
+					"name": "Property Valuation",
+					"description": "Free market valuation report for your property. Takes 24 hours."
+				},
+				{
+					"name": "Legal Assistance",
+					"description": "We connect clients with trusted lawyers for registry, NOC, and transfer documents."
+				}
+			],
+			"pricing": [
+				{
+					"service": "Agent commission (sale)",
+					"fee": "1% of property value, paid at closing"
+				},
+				{
+					"service": "Agent commission (rental)",
+					"fee": "One month's rent, split between buyer and seller agent"
+				},
+				{
+					"service": "Property management",
+					"fee": "5% of monthly rent collected"
+				},
+				{
+					"service": "Valuation report",
+					"fee": "Free for listed properties, PKR 5,000 for external requests"
+				}
+			],
+			"current_listings_sample": [
+				{
+					"type": "5 Marla House",
+					"location": "DHA Phase 6, Lahore",
+					"price": "PKR 2.8 Crore",
+					"bedrooms": 3,
+					"status": "For Sale"
+				},
+				{
+					"type": "2 Bed Apartment",
+					"location": "Gulberg, Lahore",
+					"price": "PKR 80,000/month",
+					"bedrooms": 2,
+					"status": "For Rent"
+				},
+				{
+					"type": "10 Marla House",
+					"location": "Bahria Town, Islamabad",
+					"price": "PKR 4.5 Crore",
+					"bedrooms": 4,
+					"status": "For Sale"
+				},
+				{
+					"type": "Studio Apartment",
+					"location": "F-10, Islamabad",
+					"price": "PKR 45,000/month",
+					"bedrooms": 0,
+					"status": "For Rent"
+				}
+			],
+			"hours": {
+				"office": "Monday–Saturday: 9:00 AM – 7:00 PM",
+				"sunday": "By appointment only"
+			},
+			"faqs": [
+				{
+					"q": "What documents do I need to buy a property?",
+					"a": "CNIC copy, two passport photos, and the purchase funds. Our agent guides you through the full documentation process."
+				},
+				{
+					"q": "Do you verify properties before listing?",
+					"a": "Yes. We conduct a title verification and site visit before listing any property."
+				},
+				{
+					"q": "What is your turnaround time for finding a rental?",
+					"a": "We typically find suitable options within 3–5 business days depending on your requirements and budget."
+				},
+				{
+					"q": "Can you manage my property if I'm abroad?",
+					"a": "Absolutely. We handle everything — tenant sourcing, rent collection, and maintenance — and send you monthly reports."
+				},
+				{
+					"q": "Is there a fee for viewing properties?",
+					"a": "No. Property viewings are completely free with no obligation."
+				}
+			],
+			"booking_link": "cal.com/primespacesdemo"
+		},
+		{
+			"business_id": "demo_003",
+			"type": "medical_clinic",
+			"name": "ClearSkin Dermatology Clinic",
+			"tagline": "Expert skin care you can trust.",
+			"ai_persona": "Professional, reassuring, never provides medical diagnoses. Always recommends in-person consultation for specific concerns.",
+			"important_note": "BRIO must never diagnose conditions or recommend specific treatments. Always say: 'Dr. Nadia will assess this during your consultation.'",
+			"services": [
+				{
+					"name": "General Dermatology Consultation",
+					"price": "PKR 2,000",
+					"duration": "20 minutes"
+				},
+				{
+					"name": "Acne Treatment Session",
+					"price": "PKR 3,500 per session",
+					"duration": "30 minutes"
+				},
+				{
+					"name": "Laser Hair Removal",
+					"price": "PKR 5,000–15,000 depending on area",
+					"duration": "15–45 minutes"
+				},
+				{
+					"name": "Chemical Peel",
+					"price": "PKR 4,000 per session",
+					"duration": "30 minutes",
+					"sessions_recommended": "3–6 sessions"
+				},
+				{
+					"name": "PRP Hair Treatment",
+					"price": "PKR 8,000 per session",
+					"duration": "45 minutes",
+					"sessions_recommended": "4 sessions"
+				},
+				{
+					"name": "Mole/Wart Removal",
+					"price": "PKR 3,000–8,000 depending on size/number",
+					"duration": "15–30 minutes"
+				},
+				{
+					"name": "Botox",
+					"price": "From PKR 15,000",
+					"duration": "20 minutes",
+					"note": "Exact quote given at consultation"
+				}
+			],
+			"hours": {
+				"monday_to_friday": "10:00 AM – 7:00 PM",
+				"saturday": "10:00 AM – 4:00 PM",
+				"sunday": "Closed"
+			},
+			"doctor": {
+				"name": "Dr. Nadia Rahim",
+				"qualification": "MBBS, MCPS (Dermatology), 12 years experience",
+				"specialization": "Medical and cosmetic dermatology"
+			},
+			"location": {
+				"area": "Cavalry Ground, Lahore",
+				"address": "House 45, Block C, Cavalry Ground Extension"
+			},
+			"faqs": [
+				{
+					"q": "Do I need a referral to visit?",
+					"a": "No referral needed. You can book directly through us."
+				},
+				{
+					"q": "How many sessions will I need?",
+					"a": "This varies by condition and treatment. Dr. Nadia will create a personalized plan during your first consultation."
+				},
+				{
+					"q": "Is the clinic hygienic and safe?",
+					"a": "Yes. We maintain strict sterilization protocols and use single-use equipment where applicable."
+				},
+				{
+					"q": "Do you offer payment plans?",
+					"a": "Yes, for packages of 3 or more sessions, we offer 50% upfront and 50% over the remaining sessions."
+				},
+				{
+					"q": "Can I book for someone else?",
+					"a": "Yes, you can book on behalf of a family member. Please provide the patient's name and age when booking."
+				}
+			],
+			"booking_link": "cal.com/clearskindemo"
+		},
+		{
+			"business_id": "demo_004",
+			"type": "ecommerce",
+			"name": "UrbanThreads — Premium Clothing",
+			"tagline": "Premium quality, delivered to your door.",
+			"ai_persona": "Friendly, trendy, helpful. Enthusiastic about products. Uses casual but professional tone.",
+			"services": [
+				{
+					"name": "Online Shopping",
+					"description": "Browse our full catalogue at urbanthreads.pk"
+				},
+				{
+					"name": "Custom Orders",
+					"description": "Custom sizing and embroidery available for orders of 3+ items"
+				},
+				{
+					"name": "Gift Wrapping",
+					"description": "Free gift wrapping available on request"
+				},
+				{
+					"name": "Exchange/Return",
+					"description": "7-day exchange policy for unused, unwashed items with tags intact"
+				}
+			],
+			"categories": [
+				"Men's Formal",
+				"Men's Casual",
+				"Women's Eastern",
+				"Women's Western",
+				"Kids",
+				"Accessories"
+			],
+			"pricing": [
+				{
+					"category": "Men's Shirts",
+					"range": "PKR 1,800 – PKR 4,500"
+				},
+				{
+					"category": "Women's Lawn Suits (unstitched)",
+					"range": "PKR 2,500 – PKR 8,000"
+				},
+				{
+					"category": "Kids Clothing",
+					"range": "PKR 800 – PKR 2,200"
+				},
+				{
+					"category": "Accessories (bags, belts)",
+					"range": "PKR 500 – PKR 3,000"
+				}
+			],
+			"delivery": {
+				"within_lahore": "1–2 business days, PKR 150",
+				"other_cities_Pakistan": "2–4 business days, PKR 200–350",
+				"free_delivery_threshold": "Free delivery on orders above PKR 5,000",
+				"courier": "TCS, Leopards, or rider for Lahore"
+			},
+			"payment": [
+				"Cash on Delivery",
+				"EasyPaisa",
+				"JazzCash",
+				"Bank Transfer",
+				"Credit/Debit Card"
+			],
+			"faqs": [
+				{
+					"q": "How do I check my order status?",
+					"a": "Share your order number and we'll give you a real-time update."
+				},
+				{
+					"q": "Can I exchange if the size doesn't fit?",
+					"a": "Yes! Exchange within 7 days for unused items. We cover the exchange courier cost within Lahore."
+				},
+				{
+					"q": "Do you ship internationally?",
+					"a": "Not currently. We ship within Pakistan only."
+				},
+				{
+					"q": "Can I see the item before buying?",
+					"a": "We have a physical store in Packages Mall, Lahore. You can visit between 11am–9pm daily."
+				},
+				{
+					"q": "What if I receive a damaged item?",
+					"a": "Contact us immediately with a photo and we'll arrange a replacement or full refund."
+				},
+				{
+					"q": "Do you have sale or discount codes?",
+					"a": "Follow us on Instagram @urbanthreads for discount codes and flash sales."
+				}
+			],
+			"booking_link": null,
+			"contact_note": "For order issues, ask customer for order number first."
+		},
+		{
+			"business_id": "demo_005",
+			"type": "coaching",
+			"name": "Apex Business Coaching",
+			"tagline": "Unlock your business potential.",
+			"ai_persona": "Confident, knowledgeable, inspiring. Speaks like a trusted advisor. Asks qualifying questions to understand the prospect's situation.",
+			"services": [
+				{
+					"name": "1-on-1 Business Coaching",
+					"price": "PKR 25,000/month (4 sessions)",
+					"duration": "60 minutes per session",
+					"description": "Personalized coaching for entrepreneurs and business owners"
+				},
+				{
+					"name": "Group Coaching Program",
+					"price": "PKR 12,000/month",
+					"duration": "90-minute weekly group session",
+					"description": "Join a cohort of 8–12 business owners. Next cohort starts first Monday of each month."
+				},
+				{
+					"name": "Strategy Day",
+					"price": "PKR 40,000",
+					"duration": "Full day (6 hours)",
+					"description": "Intensive 1-day session to map out your business strategy, goals, and action plan"
+				},
+				{
+					"name": "Free Discovery Call",
+					"price": "FREE",
+					"duration": "30 minutes",
+					"description": "Understand your challenges and see if we're a fit. No commitment required."
+				},
+				{
+					"name": "Online Courses",
+					"price": "PKR 4,500 – PKR 15,000",
+					"duration": "Self-paced",
+					"description": "Recorded courses on sales, marketing, and operations"
+				}
+			],
+			"coach": {
+				"name": "Bilal Chaudhry",
+				"background": "Former McKinsey consultant, scaled 3 businesses to 8-figure revenue, 200+ clients coached"
+			},
+			"results": [
+				"Average client sees 40% revenue growth in 6 months",
+				"92% client retention rate",
+				"Featured in Business Recorder and Dawn"
+			],
+			"hours": "Discovery calls: Monday–Friday, 10am–6pm. Coaching sessions by appointment.",
+			"faqs": [
+				{
+					"q": "How is this different from a business consultant?",
+					"a": "A consultant gives you answers. A coach develops your ability to find answers yourself. Bilal does both — strategy and execution."
+				},
+				{
+					"q": "What kind of businesses do you work with?",
+					"a": "SMBs across all industries — retail, services, manufacturing, e-commerce. Revenue range: PKR 1M–500M annually."
+				},
+				{
+					"q": "How quickly will I see results?",
+					"a": "Most clients see measurable changes in 60–90 days. Significant revenue growth typically shows in months 4–6."
+				},
+				{
+					"q": "Is the free discovery call really free?",
+					"a": "100% free, no strings attached. We talk, see if there's a fit, and you decide."
+				},
+				{
+					"q": "Can I do online sessions?",
+					"a": "Yes. All sessions available via Zoom. Physical sessions available in Lahore only."
+				}
+			],
+			"booking_link": "cal.com/apexcoachdemo"
+		}
+	]
+}
